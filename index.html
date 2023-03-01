@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script> 
+</head>
+<body>
+    <py-config>
+        packages = ["nba_api", "python-dateutil", "openssl", "certifi"]
+      </py-config>
+
+    <py-script>
+        from nba_api.stats.endpoints import playercareerstats
+
+        # Nikola Jokić
+        career = playercareerstats.PlayerCareerStats(player_id='203999') 
+        
+        # pandas data frames (optional: pip install pandas)
+        career.get_data_frames()[0]
+        
+        # json
+        career.get_json()
+        
+        # dictionary
+        career.get_dict()
+
+
+      </py-script>
+</body>
+</html>

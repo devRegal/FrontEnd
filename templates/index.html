@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NBA Game Tracker</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>NBA Scoreboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-    <h1>NBA Game Tracker</h1>
-    <div class="game-list">
-        
-        <ul>
-            {% for game in scoreboard.iterrows() %}
-            {% set home_team = game[1]['GAMECODE'][9:12] %}
-            {% set away_team = game[1]['GAMECODE'][12:15] %}
-            <li> {{ game[1]['GAMECODE'][4:6] }}/{{ game[1]['GAMECODE'][6:8] }}/{{ game[1]['GAMECODE'][:4] }} - {{ home_team }} {{ game[1]['HTVTEAM_NICKNAME'] }} vs. {{ away_team }} {{ game[1]['VTMTEAM_NICKNAME'] }}</li>
+    <h1>NBA Scoreboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Away Team</th>
+                <th>Home Team</th>
+                <th>Game Time (ET)</th>
+                <th>Game Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr >
+                    <td>{{ game.away_team }}</td>
+                    <td>{{ game.home_team }}</td>
+                    <td>{{ game.game_time }}</td>
+                    <td>{{ game.game_location }}</td>
+                </tr>
             {% endfor %}
-        </ul>
-       
-    </div>
+        </tbody>
+    </table>
 </body>
 </html>

@@ -1,16 +1,30 @@
 from flask import Flask, render_template
-from datetime import datetime
-from nba_api.stats.endpoints import scoreboardv2, boxscoretraditionalv2
+from nba_api.live.nba.endpoints import scoreboard
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    today = datetime.today().strftime('%Y-%m-%d')
-    scoreboard = scoreboardv2.ScoreboardV2(game_date=today).game_header.get_data_frame()
-    scoreboard['GAME_DATE_EST'] = [datetime.strptime(date, '%Y-%m-%dT%H:%M:%S').strftime('%B %d, %Y') for date in scoreboard['GAME_DATE_EST']]
-    print(scoreboard.keys)
-    return render_template('index.html', scoreboard=scoreboard)
+    # Today's Score Board
+    games = scoreboard.ScoreBoard()
+
+    # Convert JSON to Python dictionary
+    tst = json.loads(games.get_json())
+
+    # Extract game data
+    game_data = []
+    for game in tst['scoreboard']['games']:
+        home_team = game['homeTeam']['teamName']
+        away_team = game['awayTeam']['teamName']
+        game_time = game['gameStatusText']
+        game_location = game['homeTeam']['teamCity']
+        
+        game_data.append({'home_team': home_team, 'away_team': away_team, 'game_time': game_time, 'game_location': game_location})
+        
+    # Render template with game data
+    return render_template('index.html', games=game_data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
