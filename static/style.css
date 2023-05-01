@@ -1,3 +1,6 @@
+body{
+  margin: 0;
+}
 table {
     border-collapse: collapse;
     margin: 20px;
@@ -64,4 +67,29 @@ table {
   li.game-bottom{ 
     border-top:1px solid #aaa;
   }
-  
+.header{
+  background-color: #4CAF50;
+  overflow: hidden;
+}
+
+.header nav {
+  float: right;
+  overflow:  hidden;
+  display: block;
+}
+.header a {
+  color: white;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.header input[type=search]{
+  float: right;
+  padding: 6px;
+  margin-top: 5px;
+  margin-right: 16px;
+  font-size: 17px;
+
+}
