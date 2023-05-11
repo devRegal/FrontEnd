@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+  }
+.header{
+    background-color: #4CAF50;
+    overflow: hidden;
+  }
+  
+  .header nav {
+    float: right;
+    overflow:  hidden;
+    display: block;
+  }
+  .header a {
+    color: white;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .header input[type=search]{
+    float: right;
+    padding: 6px;
+    margin-top: 5px;
+    margin-right: 16px;
+    font-size: 17px;
+  
+  }
+  .about_us h2{
+    text-align: center;
+    font-family: monospace;
+  }
+  .about_us p{
+text-align: center;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .about_us dl{
+    text-align: center;
+  }
+  .about_us dd{
+    margin-right: 45px;
+  }

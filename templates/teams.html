@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='teams.css') }}">
+    <title>Teams</title>
+</head>
+<body>
+    <div class="header">
+        <a href="#">NBA</a>
+        <a href="{{url_for('teams')}}">Teams</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <input type="search" placeholder="Search...">
+</div>
+<div class="row">
+    <div class="column">
+      <h2>West Standings</h2>
+      <ol>
+        <li>Denver</li>
+        <li>Memphis</li>
+        <li>Sacramento</li>
+        <li>Phoenix</li>
+        <li>Los Angeles Clippers</li>
+        <li>Golden State</li>
+        <li>Los Angeles Lakers</li>
+        <li>Minisota</li>
+        <li>New Orleans</li>
+        <li>Oklahoma</li>
+        <li>Dallas</li>
+        <li>Utah</li>
+        <li>Portland</li>
+        <li>Houston</li>
+        <li>San Antonio</li>
+      </ol>
+    </div>
+    <div class="column" >
+      <h2>East Standings</h2>
+      <ol>
+        <li>Milwaukee</li>
+        <li>Boston</li>
+        <li>Philadelphia</li>
+        <li>Cleveland</li>
+        <li>New York</li>
+        <li>Brooklyn</li>
+        <li>Atlanta</li>
+        <li>Miami</li>
+        <li>Toronto</li>
+        <li>Chicago</li>
+        <li>Indiana</li>
+        <li>Washington</li>
+        <li>Orlando</li>
+        <li>Charlotte</li>
+        <li>Detroit</li>
+      </ol>
+    </div>
+  </div>
+
+    
+
+</div>
+</body>
+</html>

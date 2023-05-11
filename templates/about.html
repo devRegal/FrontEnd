@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+    <title>About</title>
+</head>
+<body>
+    <div class="header">
+        <a href="#">NBA</a>
+        <a href="{{ url_for('teams') }}">Teams</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <input type="search" placeholder="Search...">
+</div>
+<div class="about_us">
+    <h2>About Us</h2>
+    <p>
+        Our team consist of Geovanny Casian and Sergio Murguia, two avid NBA fans. Our plan for the Final project was to create a website for something we love and decided 
+        we would like to share the same passion with others. We love to stay up to date on who is playing ad scores, So we decided to create a NBA score board.
+    </p>
+    <h2>Our Team</h2>
+
+    <dl>
+        <h4><dt>Geovanny Casian</dt></h4>
+        <dd>- casian.geovanny@csu.fullerton.edu</dd>
+        <dd>- Dallas Mavericks</dd>
+        <h4><dt>Sergio Murguia</dt></h4>
+        <dd>- smurguia1@csu.fullerton.edu</dd>
+        <dd>- Los Angeles Lakers</dd>
+    </dl>
+    
+
+</div>
+</body>
+</html>

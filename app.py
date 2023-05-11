@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from nba_api.live.nba.endpoints import scoreboard
 import json
 
@@ -34,7 +34,13 @@ def index():
         
     # Render template with game data
     return render_template('index.html', games=game_data)
-
+    
+@app.route('/teams')
+def teams():
+    return render_template('teams.html')
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
